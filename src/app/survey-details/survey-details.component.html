@@ -5,7 +5,7 @@
          
  
 <div class="body-text-message"> 
-  <p>survey body text : {{model.bodyTextSurvey}}</p>
+  <p class="lead">survey body text : {{model.bodyTextSurvey}}</p>
 </div>
 
 <div class="created-date">
@@ -13,23 +13,27 @@
 <app-modal-question></app-modal-question>
 </div>
 
-    <div class="messages-of-survey">
-        <h5 class="your-messag">Your questions: </h5>
-        <ol>
-             <li *ngFor="let item of questionList" > 
-                  <div>{{item.questionTittle}}</div> 
-                 
-                  <ol>
-                       <li *ngFor="let subItem of item.questions"> 
+    
+   <li *ngFor="let item of questionList" > 
+          <div class="jumbotron">
+                    <h1 class="display-4">{{item.questionTittle}}</h1>
+                    <ol>
+                              <li *ngFor="let subItem of item.questions"> 
+                                        <p class="lead"> {{subItem.questionMessage}}</p>
+                               
+                                        <hr class="my-4">
+                                   {{subItem.questionTitlte}}
+                               
+                              </li>
+               </ol>
+          </div>
+          <div>
 
-                        
-                            <div>{{subItem.questionMessage}}</div> 
-                            <div>{{subItem.questionTitlte}}</div> 
-                        
-                       </li>
-                  </ol>
-             </li>
-        </ol>
-   </div>
+      </div> 
+         
+         
+     </li>
+  
+   
   
 </div>

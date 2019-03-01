@@ -14,10 +14,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class QuestionService implements OnInit{
     constructor(private _http: HttpClient) { }
 
-    url : Utils = new Utils();
     ngOnInit(){
     
     }
+
    
   
+ 
 }
+

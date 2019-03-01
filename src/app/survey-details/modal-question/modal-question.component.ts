@@ -14,6 +14,7 @@ import { Utils } from 'src/app/utils';
 })
 export class ModalQuestionComponent implements OnInit {
   closeResult: string;
+
  public model:Question = new Question();
 
  
@@ -66,7 +67,9 @@ export class ModalQuestionComponent implements OnInit {
 
   //create new message to Survey
   public post()  {
-    const url = 'https://localhost:44330/api/question/survey/tolist/';
+    
+    this.model.questionTittle = 'TITTLE';
+
     const id = this.rout.snapshot.paramMap.get('id');
     this.submitted = true;
     if(this.formGroup.invalid ) {
@@ -77,7 +80,7 @@ export class ModalQuestionComponent implements OnInit {
   
     this._http.post<any>(this.url.addNewQuestionToSurvey + id,this.model,this.httpOptions).subscribe((data:any)=>{
       console.log(data);
-                  
+           
     });
     
     window.location.reload();
