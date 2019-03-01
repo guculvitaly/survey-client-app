@@ -1,0 +1,26 @@
+
+    <div style="text-align:center">
+        <h1>
+          <h3>Feedback Manager</h3>
+        </h1>
+               <app-modal></app-modal>
+      </div>
+
+
+<ul class="list-group">
+  <li *ngFor="let item of list" >
+  
+      <a href="#" class="list-group-item list-group-item-action"   routerLink="/survey/{{ item.surveyId }}" >
+          <div class="d-flex w-100 justify-content-between">
+            
+            <h5 class="mb-1" *ngIf="item.nameOfSurvey != null">{{item.nameOfSurvey }}</h5>
+            <small *ngIf="item.surveyId != null">{{item.createdTime}}</small>
+          </div>
+          <p class="mb-1"  *ngIf="item.userNameCreator != null">{{item.userNameCreator}}</p>
+         
+        
+        </a>
+    
+  </li>
+</ul> 
+

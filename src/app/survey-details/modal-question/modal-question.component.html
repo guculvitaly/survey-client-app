@@ -1,0 +1,32 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">New Question</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form >
+        <div class="form-group">
+          <label for="username">Question tittle</label> 
+          <div class="input-group" [formGroup]="formGroup">
+              <input type="text" formControlName="QuestionTittle" class="form-control" [(ngModel)]="model.questionTittle" name="first" placeholder="Recipient's tittle" aria-label="Recipient's username" aria-describedby="basic-addon2">
+              
+          </div>
+          
+
+          <label for="exampleFormControlTextarea1">Write your questionMessage</label>
+          <textarea class="form-control"  [(ngModel)]="model.questionMessage " name="text" id="text-area" rows="3"></textarea>
+
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <!-- <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button> -->
+      <button type="submit" class="btn btn-outline-dark" [disabled]="!model.questionMessage || !model.questionTittle" (click)="post();modal.close('Save click')">Send question</button>
+    </div>
+  </ng-template>
+  
+  <button class="btn btn-info btn-question"  (click)="open(content)">Create question</button>
+  
+  <hr>

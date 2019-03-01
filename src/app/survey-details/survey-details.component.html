@@ -1,0 +1,35 @@
+
+<div class="container-fluid ">
+  
+     <h1 class="survey-name">{{ model.nameOfSurvey }}</h1>
+         
+ 
+<div class="body-text-message"> 
+  <p>survey body text : {{model.bodyTextSurvey}}</p>
+</div>
+
+<div class="created-date">
+<h5>created date: {{model.createdTime}}</h5>
+<app-modal-question></app-modal-question>
+</div>
+
+    <div class="messages-of-survey">
+        <h5 class="your-messag">Your questions: </h5>
+        <ol>
+             <li *ngFor="let item of questionList" > 
+                  <div>{{item.questionTittle}}</div> 
+                 
+                  <ol>
+                       <li *ngFor="let subItem of item.questions"> 
+
+                        
+                            <div>{{subItem.questionMessage}}</div> 
+                            <div>{{subItem.questionTitlte}}</div> 
+                        
+                       </li>
+                  </ol>
+             </li>
+        </ol>
+   </div>
+  
+</div>

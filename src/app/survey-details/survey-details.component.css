@@ -1,0 +1,22 @@
+
+.survey-name{
+    text-align: center;
+}
+
+.body-text-message {
+    background-color: #DCDCDC;
+
+}
+.created-date{
+    position: relative;
+    /* float: right; */
+}
+
+.quest-btn{
+    position: relative;
+    float: right;
+    top: 50px;
+    
+
+}
+
