@@ -10,7 +10,7 @@
         <div class="form-group">
           <label for="username">Question tittle</label> 
           <div class="input-group" [formGroup]="formGroup">
-              <input type="text" formControlName="QuestionTittle" class="form-control" [(ngModel)]="model.questionTittle" name="first" placeholder="Recipient's tittle" aria-label="Recipient's tittle" aria-describedby="basic-addon2">
+              <input type="text" formControlName="QuestionTittle" class="form-control" [(ngModel)]="model.QuestionTitlte" name="first" placeholder="Recipient's tittle" aria-label="Recipient's tittle" aria-describedby="basic-addon2">
               
           </div>
           
@@ -23,7 +23,7 @@
     </div>
     <div class="modal-footer">
       <!-- <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button> -->
-      <button type="submit" class="btn btn-outline-dark" [disabled]="!model.questionMessage || !model.questionTittle" (click)="post();modal.close('Save click')">Send question</button>
+      <button type="submit" class="btn btn-outline-dark" [disabled]="!model.questionMessage || !model.QuestionTitlte" (click)="post(model);modal.close('Save click')">Send question</button>
     </div>
   </ng-template>
   

@@ -1,6 +1,6 @@
 export class Question {
     questionId:number;
-    questionTittle:any;
+    QuestionTitlte:string;
     questionMessage:string;
     questionAnswer:string;
     surveyListId:string;

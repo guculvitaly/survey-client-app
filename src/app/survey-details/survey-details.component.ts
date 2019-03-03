@@ -23,6 +23,7 @@ export class SurveyDetailsComponent implements OnInit  {
   id : Navigation;
 
   list: Survey[];
+  
   private questionList: Question[] [
 
   ];

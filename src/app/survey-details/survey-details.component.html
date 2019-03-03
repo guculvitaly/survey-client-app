@@ -16,13 +16,14 @@
     
    <li *ngFor="let item of questionList" > 
           <div class="jumbotron">
-                    <h1 class="display-4">{{item.questionTittle}}</h1>
+                    
                     <ol>
                               <li *ngFor="let subItem of item.questions"> 
+                                   <p> {{subItem.questionTitlte}}</p>
                                         <p class="lead"> {{subItem.questionMessage}}</p>
                                
                                         <hr class="my-4">
-                                   {{subItem.questionTitlte}}
+                                  
                                
                               </li>
                </ol>

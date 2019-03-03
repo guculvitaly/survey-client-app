@@ -68,8 +68,6 @@ export class ModalQuestionComponent implements OnInit {
   //create new message to Survey
   public post()  {
     
-    this.model.questionTittle = 'TITTLE';
-
     const id = this.rout.snapshot.paramMap.get('id');
     this.submitted = true;
     if(this.formGroup.invalid ) {
@@ -77,8 +75,11 @@ export class ModalQuestionComponent implements OnInit {
       return alert('Empty fields');
    } 
   
-  
-    this._http.post<any>(this.url.addNewQuestionToSurvey + id,this.model,this.httpOptions).subscribe((data:any)=>{
+  // this.service.addQuestionToSurvey(id).subscribe((data: Question) => {
+  //     console.log(data);
+  //     data = this.model
+  // });
+    this._http.post<any>(this.url.addNewQuestionToSurvey + id, this.model,this.httpOptions).subscribe((data:any)=>{
       console.log(data);
            
     });
